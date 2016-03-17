@@ -37,5 +37,5 @@
     };
   }
 
-  angular.module('bookstore').factory('BookFactory', BookFactory);
+  angular.module('book').factory('BookFactory', BookFactory);
 })();
