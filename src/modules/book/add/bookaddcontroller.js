@@ -1,17 +1,10 @@
-(function() {
-  'use strict';
+//notice this file is not coupled to Angular
 
-  BookAddController.$inject = ['$scope','$routeParams','BookFactory'];
-
-  function BookAddController($routeParams, BookFactory) {
+export default function BookAddController($routeParams, BookFactory) {
 
     function addBook() {
-      BookFactory.addBook(this.book);
+        BookFactory.addBook(this.book);
     }
 
     this.addBook = addBook;
-  }
-
-  angular.module('book').controller('BookAddController',BookAddController);
-
-})();
+}

@@ -1,16 +1,11 @@
-(function() {
-  'use strict';
+//notice this file is not coupled to Angular
 
-    BookListController.$inject = ['BookFactory'];
-
-    function BookListController(BookFactory) {
-
-      BookFactory.getBooks()
-        .then(function(books){
-          this.books = books;
-        }.bind(this));
-
+export default class BookListController {
+    
+    constructor(BookFactory) {
+        BookFactory.getBooks()
+        .then((books)=>{
+            this.books = books;
+        });    
     }
-
-    angular.module('book').controller('BookListController', BookListController);
-})();
+}

@@ -1,9 +1,6 @@
-(function(){
-  'use strict';
+//notice this file is not coupled to Angular
 
-  BookFactory.$inject = ['$http'];
-
-  function BookFactory($http) {
+ export default function BookFactory($http) {
     function getBook(id) {
       // TIPS: template literals
       return $http.get('/api/books/'+ id)
@@ -37,5 +34,4 @@
     };
   }
 
-  angular.module('bookstore').factory('BookFactory', BookFactory);
-})();
+

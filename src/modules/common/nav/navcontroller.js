@@ -1,9 +1,5 @@
-(function(){
-  'use strict';
+//notice this file is not coupled to Angular
 
-    function NavController() {
-      this.title = "Book Store";
-    }
-
-    angular.module('common').controller('NavController', NavController);
-})();
+export default function NavController() {
+    this.title = "Book Store";
+}
