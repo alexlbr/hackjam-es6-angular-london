@@ -1,3 +1,5 @@
+//this file handles all the dependencies with Angular
+
 import angular from "angular";
 import BookFactory from "./services/bookservice";
 import BookListController from "./list/booklistcontroller";
@@ -9,7 +11,12 @@ BookListController.$inject = ['BookFactory'];
 BookDetailsController.$inject = ['$routeParams','BookFactory'];
 BookAddController.$inject = ['$scope','$routeParams','BookFactory'];
 
-angular.module('book', []);
+//export default the name of the module so in /src/index.js we can do 
+//angular.module('bookstore', ['ngRoute', common, book]); 
+//instead of angular.module('bookstore', ['ngRoute', common, "book""]);
+//And so we don't hardcode the name of the module
+export default angular.module('book', []).name;
+
 angular.module('book').factory('BookFactory', BookFactory);
 angular.module('book').controller('BookListController', BookListController);
 angular.module('book').controller('BookDetailsController',BookDetailsController);
